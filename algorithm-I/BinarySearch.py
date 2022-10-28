@@ -1,6 +1,3 @@
-
-
-
 def search(nums,target) :
     l = 0
     r = len(nums)-1

@@ -1,6 +1,3 @@
-import re
-
-
 def search(target,list):
     l = 0 
     r = len(list) - 1

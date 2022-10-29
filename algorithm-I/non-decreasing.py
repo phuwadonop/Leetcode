@@ -1,7 +1,4 @@
-
-
-
-def sortedSquares(nums) :
+def sorted_squares(nums) :
     for i in range(len(nums)) : nums[i] = nums[i]**2
     return sorted(nums)
 
@@ -15,13 +12,8 @@ def rotate(nums,k) :
         for i in range(len(nums)-k) : 
             temp = nums.pop(0)
             nums.append(temp)
-        
-    
-    
-        
-        
-        
-nums = [1,2,3,4,5,6,7]
+
+nums = [1,2,3,4,5,6,7] 
 k = 6
 # print(id(nums))
 rotate(nums,k)

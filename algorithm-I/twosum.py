@@ -1,6 +1,3 @@
-import re
-
-
 def search(target,list):
     l = 0 
     r = len(list) - 1
@@ -12,14 +9,13 @@ def search(target,list):
     return -1
 
 def two_sum(numbers , target) :
-    l = len(numbers) 
-    for i in range(l) :
+    for i in range(len(numbers)) :
         search_tg = target - numbers[i]
-        temp = numbers[i]
-        numbers.remove(temp)
-        index = search(search_tg,numbers)
-        numbers.insert(i,temp)
-        if index != -1 : return sorted([i+1,index+2])
+        index_1 = search(search_tg,numbers[:i])
+        index_2 = search(search_tg,numbers[i+1:])
+        if index_1 != -1 or index_2 != -1 : 
+            if index_1  != -1 : return [index_1+1,i+1]
+            else : return [i+1,index_2+i+2]
         
 def two_sum_2(numbers,  target) :
     l, r = 0 , len(numbers) - 1

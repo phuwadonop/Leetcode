@@ -20,25 +20,6 @@ def fill(grid,row,col) :
         return ans
     return dfsFill(row,col)
 
-def maxAreaOfIsland(grid: list[list[int]]) -> int:
-        m, n = len(grid), len(grid[0])
-        DIR = [0, 1, 0, -1, 0]
-
-        def dfs(r, c):
-            if r < 0 or r == m or c < 0 or c == n or grid[r][c] == 0: 
-                return 0
-            ans = 1
-            grid[r][c] = 0  # Mark this square as visited
-            for i in range(4):
-                ans += dfs(r + DIR[i], c + DIR[i + 1])
-            return ans
-
-        ans = 0
-        for r in range(m):
-            for c in range(n):
-                ans = max(ans, dfs(r, c))
-        return ans
-
 grid = [[1,1,0,0,0],[1,1,0,0,0],[0,0,0,1,1],[0,0,0,1,1]]
 for i in grid : print(i)
 print(max_area_of_island(grid))
